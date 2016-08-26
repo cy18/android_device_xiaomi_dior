@@ -51,7 +51,8 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
+TARGET_CRYPTFS_HW_PATH := $(LOCAL_PATH)/cryptfs_hw
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
@@ -85,9 +86,9 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
 # Hardware tunables
-BOARD_HARDWARE_CLASS := \
-    hardware/mokee/mkhw \
-    $(LOCAL_PATH)/mkhw
+#BOARD_HARDWARE_CLASS := \
+#    hardware/mokee/mkhw \
+#    $(LOCAL_PATH)/mkhw
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_dior
@@ -96,8 +97,6 @@ TARGET_UNIFIED_DEVICE := true
 
 # Kernel
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-TARGET_KERNEL_SOURCE := kernel/xiaomi/dior
-TARGET_KERNEL_CONFIG := mokee_dior_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=dior user_debug=31 msm_rtb.filter=0x37 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -113,7 +112,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Memory
-MALLOC_IMPL := dlmalloc
+#MALLOC_IMPL := dlmalloc
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8226
@@ -142,10 +141,6 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Radio
 TARGET_RIL_VARIANT := caf
-
-# Flags
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD -DUSE_RIL_VERSION_10
-COMMON_GLOBAL_CPPFLAGS += -DNO_SECURE_DISCARD -DUSE_RIL_VERSION_10
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true

@@ -25,6 +25,10 @@ TARGET_SCREEN_WIDTH := 720
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
+# kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/boot.img:kernel
+
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-flags=--no-watch-dog
