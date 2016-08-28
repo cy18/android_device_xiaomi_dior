@@ -30,9 +30,9 @@ LOCAL_SRC_FILES += \
 LOCAL_SRC_FILES += \
     loc_eng_dmn_conn.cpp \
     loc_eng_dmn_conn_handler.cpp \
-    loc_eng_dmn_conn_thread_helper.cpp \
-    loc_eng_dmn_conn_glue_msg.cpp \
-    loc_eng_dmn_conn_glue_pipe.cpp
+    loc_eng_dmn_conn_thread_helper.c \
+    loc_eng_dmn_conn_glue_msg.c \
+    loc_eng_dmn_conn_glue_pipe.c
 
 LOCAL_CFLAGS += \
      -fno-short-enums \
@@ -78,7 +78,7 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_SRC_FILES += \
     loc.cpp \
-    gps.cpp
+    gps.c
 
 LOCAL_CFLAGS += \
     -fno-short-enums \
