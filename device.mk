@@ -154,10 +154,6 @@ PRODUCT_PACKAGES += \
       libOmxVenc \
       libstagefrighthw
 
-# MKActions
-PRODUCT_PACKAGES += \
-    MKActions
-
 # Permissions
 PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
