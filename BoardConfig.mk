@@ -141,6 +141,9 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 # Radio
 TARGET_RIL_VARIANT := caf
 
+# Flags
+BOARD_NO_SECURE_DISCARD := true
+
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
