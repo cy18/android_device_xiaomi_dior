@@ -26,8 +26,14 @@ TARGET_SCREEN_WIDTH := 720
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # kernel
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/boot.img:kernel
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+  LOCAL_KERNEL := device/xiaomi/dior-kernel/zImage
+else
+  LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -84,10 +90,6 @@ PRODUCT_COPY_FILES += \
 # Connectivity
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
-
-# Data
-PRODUCT_PACKAGES += \
-    librmnetctl
 
 # Display
 PRODUCT_PACKAGES += \

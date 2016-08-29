@@ -48,7 +48,7 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
 # Filesystem
@@ -82,6 +82,8 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
 
+BOARD_EGL_CFG := $(LOCAL_PATH)/egl.cfg
+
 # Hardware tunables
 #BOARD_HARDWARE_CLASS := \
 #    hardware/mokee/mkhw \
@@ -94,13 +96,13 @@ TARGET_UNIFIED_DEVICE := true
 
 # Kernel
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
-TARGET_KERNEL_SOURCE := kernel/xiaomi/dior
-TARGET_KERNEL_CONFIG := mokee_dior_defconfig
+#TARGET_KERNEL_SOURCE := kernel/xiaomi/dior
+#TARGET_KERNEL_CONFIG := mokee_dior_defconfig
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=dior user_debug=31 msm_rtb.filter=0x37 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_DTBTOOL_ARGS := -2
+BOARD_DTBTOOL_ARGS := --force-v2
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 
 # Camera
