@@ -27,7 +27,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
 
 # kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-  LOCAL_KERNEL := device/xiaomi/dior-kernel/zImage
+  LOCAL_KERNEL := device/xiaomi/dior/zImage
 else
   LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
